@@ -1,182 +1,249 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PAT Cargo VAD LLC</title>
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f4f4f4;
-            color: #333;
-        }
-        nav {
-            background: #000;
-            color: #fff;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 30px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        nav .logo {
-            font-size: 24px;
-            font-weight: bold;
-        }
-        nav ul {
-            list-style: none;
-            display: flex;
-            margin: 0;
-            padding: 0;
-        }
-        nav ul li {
-            margin: 0 15px;
-        }
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 16px;
-        }
-        .hero {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            padding: 80px 20px;
-            background: #111;
-            color: #fff;
-            min-height: 100vh;
-            animation: fadeIn 2s ease-in-out;
-        }
-        .hero-text {
-            max-width: 500px;
-            padding: 20px;
-            animation: slideInLeft 1.5s ease;
-        }
-        .hero-text h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-        .hero-text p {
-            font-size: 18px;
-            line-height: 1.6;
-        }
-        .hero-img img {
-            max-width: 400px;
-            width: 100%;
-            border-radius: 10px;
-            animation: slideInRight 1.5s ease;
-        }
-        .section {
-            padding: 60px 20px;
-            text-align: center;
-            max-width: 900px;
-            margin: 0 auto;
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 1s ease;
-        }
-        .section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .section h2 {
-            font-size: 32px;
-            margin-bottom: 20px;
-        }
-        .section p {
-            font-size: 18px;
-            line-height: 1.8;
-            color: #555;
-        }
-        .contact {
-            background: #e9e9e9;
-            padding: 60px 20px;
-        }
-        footer {
-            background: #000;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-            font-size: 14px;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RED CARP LLC</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #0d0d0d;
+      color: #eee;
+    }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        @keyframes slideInLeft {
-            from { transform: translateX(-50px); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
-        }
-        @keyframes slideInRight {
-            from { transform: translateX(50px); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
-        }
-    </style>
+    header {
+      background: url('https://images.unsplash.com/photo-1588459469602-52f5f8d3e6e4?auto=format&fit=crop&w=1950&q=80') no-repeat center center;
+      background-size: cover;
+      padding: 110px 20px 70px;
+      text-align: center;
+    }
+
+    header .tagline {
+      background-color: rgba(180, 0, 0, 0.85);
+      padding: 12px;
+    }
+
+    header .tagline p {
+      color: #fff;
+      font-weight: bold;
+      letter-spacing: 1px;
+      margin: 0;
+    }
+
+    header h1 {
+      font-size: 46px;
+      color: #ff4d4d;
+      margin-top: 20px;
+      text-shadow: 1px 1px 5px #000;
+    }
+
+    header p {
+      font-size: 20px;
+      color: #fdd;
+    }
+
+    nav {
+      background-color: #1a1a1a;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 14px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: #ff4d4d;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .hero {
+      background-color: #1a1a1a;
+      color: #ffcccc;
+      text-align: center;
+      padding: 90px 20px;
+    }
+
+    .hero h2 {
+      font-size: 36px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 18px;
+    }
+
+    .section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .section h2 {
+      color: #ff4d4d;
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .box {
+      background-color: #2b2b2b;
+      padding: 20px;
+      border-left: 5px solid #ff4d4d;
+      border-radius: 8px;
+    }
+
+    .box h3 {
+      color: #ff9999;
+      margin-bottom: 10px;
+    }
+
+    form {
+      background-color: #2b2b2b;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 10px;
+      border: none;
+      border-radius: 6px;
+    }
+
+    form button {
+      background-color: #ff4d4d;
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: 0;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+
+    footer {
+      background-color: #0d0d0d;
+      color: #888;
+      padding: 30px;
+      text-align: center;
+    }
+
+    a {
+      color: #ff6666;
+    }
+  </style>
 </head>
 <body>
 
-    <nav>
-        <div class="logo">PAT Cargo VAD LLC</div>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
-    <div class="hero" id="home">
-        <div class="hero-text">
-            <h1>PAT Cargo VAD LLC</h1>
-            <p>Your trusted partner in transportation and warehousing. We provide reliable cargo services and storage solutions to meet your business needs with efficiency and care.</p>
-        </div>
-        <div class="hero-img">
-            <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&auto=format&fit=crop&w=934&q=80" alt="Cargo Services">
-        </div>
+  <header>
+    <div class="tagline">
+      <p>🚗 Executive Chauffeur & Black Car Services</p>
     </div>
+    <h1>RED CARP LLC</h1>
+    <p>Elite Transportation in North Aurora, Illinois</p>
+  </header>
 
-    <div class="section" id="about">
-        <h2>About Us</h2>
-        <p>PAT Cargo VAD LLC is a Domestic LLC based in Arizona, offering specialized services in transportation and warehousing. With a focus on reliability and customer satisfaction, we have been serving businesses since 2021.</p>
-        <p><strong>Registered Address:</strong><br>
-        2902 W Sweetwater Ave, Apt 2190, Phoenix, AZ 85029, United States</p>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#booking">Book</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section class="hero">
+    <h2>🚘 Arrive in Style</h2>
+    <p>Professional, discreet, and always on time – RED CARP rides are tailored for excellence.</p>
+  </section>
+
+  <section class="section" id="about">
+    <h2>About Us</h2>
+    <div class="box">
+      <p>RED CARP LLC, established in March 2024, is a premium transport provider based in North Aurora, Illinois. Managed by Sheena Madelynn Brillantes and Alexander D. Brillantes, we focus on black car, luxury event, and executive services for clients who value privacy and performance.</p>
     </div>
+  </section>
 
-    <div class="section contact" id="contact">
-        <h2>Contact Us</h2>
-        <p><strong>Email:</strong> <a href="mailto:contact@patcargovadllc.click">contact@patcargovadllc.click</a></p>
-        <p><strong>Agent Address:</strong><br>
-        2902 W Sweetwater Ave, Apt 2190, Phoenix, AZ 85029, United States</p>
+  <section class="section" id="services">
+    <h2>Our Services</h2>
+    <div class="grid">
+      <div class="box">
+        <h3>🖤 Black Car Service</h3>
+        <p>Luxury sedans with professional drivers for business and VIP travel.</p>
+      </div>
+      <div class="box">
+        <h3>🎉 Event Chauffeurs</h3>
+        <p>Ride to your wedding, gala, or party in premium comfort and class.</p>
+      </div>
+      <div class="box">
+        <h3>📦 Corporate Accounts</h3>
+        <p>Tailored transportation plans for companies and recurring clients.</p>
+      </div>
     </div>
+  </section>
 
-    <footer>
-        &copy; 2025 PAT Cargo VAD LLC. All rights reserved.
-    </footer>
+  <section class="section" id="booking">
+    <h2>Book Your Ride</h2>
+    <form>
+      <input type="text" placeholder="Full Name" required />
+      <input type="tel" placeholder="Phone Number" required />
+      <input type="text" placeholder="Pickup Location" required />
+      <input type="text" placeholder="Destination" required />
+      <input type="datetime-local" required />
+      <textarea placeholder="Special Instructions (optional)" rows="4"></textarea>
+      <button type="submit">Request Ride</button>
+    </form>
+  </section>
 
-    <script>
-        // Intersection Observer for fade-in effect
-        const sections = document.querySelectorAll('.section');
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, {
-            threshold: 0.1
-        });
+  <section class="section" id="contact">
+    <h2>Contact Us</h2>
+    <div class="box">
+      <p><strong>Address:</strong> 357 Wildwood Dr, North Aurora, IL 60542</p>
+      <p><strong>Email:</strong> <a href="mailto:brillantes@redcarp.in.net">brillantes@redcarp.in.net</a></p>
+      <p><strong>Phone:</strong> <a href="tel:+17405707405">(740) 570-7405</a></p>
+    </div>
+    <iframe 
+      src="https://www.google.com/maps?q=357+WILDWOOD+DR,+North+Aurora,+IL+60542&output=embed" 
+      allowfullscreen 
+      loading="lazy">
+    </iframe>
+  </section>
 
-        sections.forEach(section => {
-            observer.observe(section);
-        });
-    </script>
+  <footer>
+    <p>&copy; 2025 RED CARP LLC. All rights reserved.</p>
+  </footer>
+
+  <!-- Tawk.to Live Chat -->
+  <script type="text/javascript">
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://embed.tawk.to/660b531ba0c6737bd126b1d1/1hql13ajq';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
+  })();
+  </script>
 
 </body>
 </html>
